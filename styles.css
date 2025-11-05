@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('fondo.png');
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-size: cover;       /* La imagen cubre todo el contenedor */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ===== BANNER PRINCIPAL ===== */
+.banner {
+    width: 100%;
+    max-width: 1600px;
+    background-image: 
+    linear-gradient(135deg, rgba(0,26,77,0.7) 0%, rgba(0,61,153,0.7) 50%, rgba(0,26,77,0.7) 100%),
+    url('fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 80px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+}
+
+/* ===== SECCIÓN IZQUIERDA - LOGO ===== */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.5));
+}
+
+.shield-img {
+    margin-top: 130px;
+    width: 300%;
+    height: 300%;
+    object-fit: contain;
+}
+
+/* ===== SECCIÓN CENTRO - TÍTULO Y MARCA ===== */
+.center-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.tagline {
+    font-size: 42px;
+    color: white;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.tagline strong {
+    font-weight: 700;
+}
+
+.brand-name {
+    font-size: 100%; /* tamaño relativo al ancho de la ventana */
+    font-weight: 900; /* muy grueso */
+    background: linear-gradient(135deg, #00ccff, #0099ff); /* degradado de colores */
+    -webkit-background-clip: text; /* aplica el fondo solo al texto (Chrome, Safari, Edge) */
+    -webkit-text-fill-color: transparent; /* hace el texto transparente para ver el gradiente */
+    background-clip: text; /* estándar para otros navegadores */
+    letter-spacing: 2px; /* espacio entre letras */
+    text-align: center; /* centra el texto */
+    line-height: 1; /* evita que se corte verticalmente */
+    white-space: nowrap; /* evita que el texto haga salto de línea */
+    overflow: visible; /* asegura que nada se recorte */
+    padding-top: 20px;
+}
+
+
+/* ===== SECCIÓN DERECHA - CONTACTO Y SERVICIOS ===== */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0066ff, #00ccff);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(0, 150, 255, 0.4);
+    overflow: hidden;
+}
+
+.icon-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    font-size: 12px;
+    color: #99ccff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.contact-value {
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+/* ===== SERVICIOS ===== */
+.services {
+    
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(0, 255, 255, 0.3);
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-item::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #00ccff, #0099ff);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1400px) {
+    .banner {
+        padding: 40px 40px;
+        gap: 30px;
+    }
+
+    .tagline {
+        font-size: 32px;
+    }
+
+    .brand-name {
+        font-size: 40px;
+    }
+
+    .shield {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .banner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px;
+    }
+
+    .left-section {
+        grid-column: 1;
+    }
+
+    .center-section {
+        grid-column: 1;
+        text-align: center;
+    }
+
+    .right-section {
+        grid-column: 1;
+        align-items: center;
+    }
+
+    .tagline {
+        font-size: 36px;
+    }
+
+    .brand-name {
+        font-size: 44px;
+    }
+}
